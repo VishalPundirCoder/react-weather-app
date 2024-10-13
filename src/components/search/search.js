@@ -7,9 +7,7 @@ const Search = ({ onSearchChange }) => {
 
   const fetchSpecificCities = () => {
     const specificCities = [
-      { latitude: 28.6139, longitude: 77.2090, name: "Delhi", countryCode: "IN" },
-      { latitude: 22.5726, longitude: 88.3639, name: "Kolkata", countryCode: "IN" },
-      { latitude: 19.0760, longitude: 72.8777, name: "Mumbai", countryCode: "IN" },
+     
     ];
 
     return {
@@ -25,10 +23,9 @@ const Search = ({ onSearchChange }) => {
       return fetchSpecificCities();
     }
 
-    const response = await fetch(
-      `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
-      geoApiOptions
-    );
+      const response = await fetch(
+        `https://weatherapi-khn2.onrender.com/api/cities?namePrefix=${inputValue}`
+      );
 
     const data = await response.json();
     return {

@@ -13,10 +13,10 @@ function App() {
     const [lat, lon] = searchData.value.split(" ");
 
     const currentWeatherFetch = fetch(
-      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
+      `https://weatherapi-khn2.onrender.com/api/weather?lat=${lat}&lon=${lon}`
     );
     const forecastFetch = fetch(
-      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`
+      `https://weatherapi-khn2.onrender.com/api/forecast?lat=${lat}&lon=${lon}`
     );
 
     Promise.all([currentWeatherFetch, forecastFetch])

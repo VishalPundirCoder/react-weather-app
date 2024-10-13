@@ -11,11 +11,8 @@ const CurrentWeather = ({ data }) => {
           <p className="city">{data.city}</p>
           <p className="weather-description">{data.weather[0].description}</p>
         </div>
-        <img
-          alt="weather"
-          className="weather-icon"
-          src={`icons/${data.weather[0].icon}.png`}
-        />
+       
+         <img src={require(`../icons/${data.weather[0].icon}.png`)} className="icon-small" alt="weather" />
       </div>
       <div className="bottom">
         <p className="temperature">{Math.round(data.main.temp)}°C</p>
